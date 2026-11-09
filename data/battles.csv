@@ -1,0 +1,112 @@
+key,battle,date,war,era,status,note,streets
+armada,Armada,1588-08-08,Spanish Armada,before 1793,before 1793,"Gravelines, 8 August 1588",28
+bannockburn,Bannockburn,1314-06-24,Scottish independence,before 1793,before 1793,also a town near Stirling,12
+crecy,Crecy,1346-08-26,Hundred Years War,before 1793,before 1793,,14
+poitiers,Poitiers,1356-09-19,Hundred Years War,before 1793,before 1793,,2
+agincourt,Agincourt,1415-10-25,Hundred Years War,before 1793,before 1793,,27
+bosworth,Bosworth,1485-08-22,Wars of the Roses,before 1793,before 1793,also Market Bosworth and Husbands Bosworth,73
+flodden,Flodden,1513-09-09,Anglo-Scottish wars,before 1793,before 1793,,9
+edgehill,Edgehill,1642-10-23,English Civil War,before 1793,before 1793,also a common hill name,68
+marston,Marston Moor,1644-07-02,English Civil War,before 1793,before 1793,,5
+naseby,Naseby,1645-06-14,English Civil War,before 1793,before 1793,also the Northamptonshire village,78
+sedgemoor,Sedgemoor,1685-07-06,Monmouth Rebellion,before 1793,before 1793,also the Somerset district,40
+boyne,Boyne,1690-07-11,Williamite War,before 1793,before 1793,Gregorian date; also the river and Scottish places,31
+aughrim,Aughrim,1691-07-22,Williamite War,before 1793,before 1793,Gregorian date,10
+vigo,Vigo,1702-10-23,Spanish Succession,before 1793,ambiguous,also the Spanish port,22
+blenheim,Blenheim,1704-08-13,Spanish Succession,before 1793,before 1793,often via Blenheim Palace,478
+gibraltar,Gibraltar,1704-08-04,Spanish Succession,before 1793,ambiguous,"usually the Rock, not its capture",52
+ramillies,Ramillies,1706-05-23,Spanish Succession,before 1793,before 1793,,19
+almanza,Almanza,1707-04-25,Spanish Succession,before 1793,before 1793,,1
+oudenarde,Oudenarde,1708-07-11,Spanish Succession,before 1793,before 1793,,1
+malplaquet,Malplaquet,1709-09-11,Spanish Succession,before 1793,before 1793,,1
+portobello,Portobello,1739-11-22,Jenkins' Ear,before 1793,ambiguous,"often via Portobello places (Edinburgh, London farm)",32
+dettingen,Dettingen,1743-06-27,Austrian Succession,before 1793,before 1793,,6
+fontenoy,Fontenoy,1745-05-11,Austrian Succession,before 1793,before 1793,,2
+culloden,Culloden,1746-04-16,Jacobite rising,before 1793,before 1793,also the village by Inverness,28
+minorca,Minorca,1756-05-20,Seven Years War,before 1793,ambiguous,usually the island,16
+plassey,Plassey,1757-06-23,Seven Years War,before 1793,before 1793,,11
+louisburg,Louisburg,1758-07-26,Seven Years War,before 1793,before 1793,,1
+minden,Minden,1759-08-01,Seven Years War,before 1793,before 1793,,34
+quebec,Quebec,1759-09-13,Seven Years War,before 1793,ambiguous,usually the city or province,72
+quiberon,Quiberon,1759-11-20,Seven Years War,before 1793,before 1793,,1
+belleisle,Belle Isle,1761-06-07,Seven Years War,before 1793,before 1793,capture of Belle Ile,15
+havannah,Havannah,1762-08-13,Seven Years War,before 1793,before 1793,capture of Havana,13
+stvincent,St Vincent,1797-02-14,French Revolutionary Wars,Napoleonic 1793 to 1815,ambiguous,usually the saint or Earl St Vincent,59
+camperdown,Camperdown,1797-10-11,French Revolutionary Wars,Napoleonic 1793 to 1815,clock,,27
+nile,Nile,1798-08-01,French Revolutionary Wars,Napoleonic 1793 to 1815,ambiguous,usually the river,54
+aboukir,Aboukir,1798-08-01,French Revolutionary Wars,Napoleonic 1793 to 1815,ambiguous,the Nile (1798) or the landing (1801),2
+seringapatam,Seringapatam,1799-05-04,Fourth Anglo-Mysore War,Napoleonic 1793 to 1815,clock,,0
+copenhagen,Copenhagen,1801-04-02,French Revolutionary Wars,Napoleonic 1793 to 1815,ambiguous,London's Copenhagen Street is from Copenhagen House,22
+alexandria,Alexandria,1801-03-21,French Revolutionary Wars,Napoleonic 1793 to 1815,ambiguous,usually the city (or 1882),24
+assaye,Assaye,1803-09-23,Second Anglo-Maratha War,Napoleonic 1793 to 1815,clock,,0
+trafalgar,Trafalgar,1805-10-21,Napoleonic Wars,Napoleonic 1793 to 1815,clock,,241
+maida,Maida,1806-07-04,Napoleonic Wars,Napoleonic 1793 to 1815,clock,"Maida Vale is named after it, through an inn",23
+vimeiro,Vimeiro,1808-08-21,Peninsular War,Napoleonic 1793 to 1815,clock,,1
+corunna,Corunna,1809-01-16,Peninsular War,Napoleonic 1793 to 1815,clock,,21
+talavera,Talavera,1809-07-28,Peninsular War,Napoleonic 1793 to 1815,clock,,11
+busaco,Busaco,1810-09-27,Peninsular War,Napoleonic 1793 to 1815,clock,,0
+albuera,Albuera,1811-05-16,Peninsular War,Napoleonic 1793 to 1815,clock,,0
+badajoz,Badajoz,1812-04-06,Peninsular War,Napoleonic 1793 to 1815,clock,storming of the fortress,0
+salamanca,Salamanca,1812-07-22,Peninsular War,Napoleonic 1793 to 1815,clock,,14
+vittoria,Vittoria,1813-06-21,Peninsular War,Napoleonic 1793 to 1815,clock,,8
+waterloo,Waterloo,1815-06-18,Napoleonic Wars,Napoleonic 1793 to 1815,clock,,367
+algiers,Algiers,1816-08-27,Bombardment of Algiers,1816 to 1853,clock,,4
+navarino,Navarino,1827-10-20,Greek War of Independence,1816 to 1853,clock,,4
+cabul,Cabul,1842-09-15,First Anglo-Afghan War,1816 to 1853,ambiguous,usually the city; dates differ,3
+meeanee,Meeanee,1843-02-17,Conquest of Sind,1816 to 1853,clock,,2
+scinde,Scinde,1843-02-17,Conquest of Sind,1816 to 1853,ambiguous,the province,1
+moodkee,Moodkee,1845-12-18,First Anglo-Sikh War,1816 to 1853,clock,,1
+ferozeshah,Ferozeshah,1845-12-21,First Anglo-Sikh War,1816 to 1853,clock,,1
+aliwal,Aliwal,1846-01-28,First Anglo-Sikh War,1816 to 1853,clock,,3
+sobraon,Sobraon,1846-02-10,First Anglo-Sikh War,1816 to 1853,clock,,2
+goojerat,Goojerat,1849-02-21,Second Anglo-Sikh War,1816 to 1853,clock,,1
+alma,Alma,1854-09-20,Crimean War,Crimea 1854 to 1856,clock,,340
+balaclava,Balaclava,1854-10-25,Crimean War,Crimea 1854 to 1856,clock,,22
+inkerman,Inkerman,1854-11-05,Crimean War,Crimea 1854 to 1856,clock,,57
+sebastopol,Sebastopol,1855-09-09,Crimean War,Crimea 1854 to 1856,clock,fall of the city after the siege,6
+crimea,Crimea,1855-09-09,Crimean War,Crimea 1854 to 1856,ambiguous,the peninsula,14
+delhi,Delhi,1857-09-20,Indian Rebellion,Indian Rebellion 1857,ambiguous,usually the city,18
+cawnpore,Cawnpore,1857-07-16,Indian Rebellion,Indian Rebellion 1857,clock,,5
+lucknow,Lucknow,1857-11-16,Indian Rebellion,Indian Rebellion 1857,clock,second relief,21
+magenta,Magenta,1859-06-04,Second Italian War,1859 to 1898,ambiguous,"usually the colour, itself named after the battle",11
+solferino,Solferino,1859-06-24,Second Italian War,1859 to 1898,clock,,0
+ulundi,Ulundi,1879-07-04,Anglo-Zulu War,1859 to 1898,clock,,3
+kandahar,Kandahar,1880-09-01,Second Anglo-Afghan War,1859 to 1898,ambiguous,the city; Roberts's march was 1880,4
+majuba,Majuba,1881-02-27,First Boer War,1859 to 1898,clock,,3
+telelkebir,Tel el Kebir,1882-09-13,Anglo-Egyptian War,1859 to 1898,clock,,1
+khartoum,Khartoum,1885-01-26,Mahdist War,1859 to 1898,clock,fall of Khartoum and death of Gordon,14
+chitral,Chitral,1895-04-20,Chitral Expedition,1859 to 1898,clock,relief of Chitral,0
+dargai,Dargai,1897-10-20,Tirah Campaign,1859 to 1898,clock,,3
+tirah,Tirah,1897-10-20,Tirah Campaign,1859 to 1898,clock,,0
+omdurman,Omdurman,1898-09-02,Mahdist War,1859 to 1898,clock,,2
+modder,Modder River,1899-11-28,Second Boer War,Boer War 1899 to 1902,clock,,5
+colenso,Colenso,1899-12-15,Second Boer War,Boer War 1899 to 1902,clock,,33
+spionkop,Spion Kop,1900-01-24,Second Boer War,Boer War 1899 to 1902,clock,also football terraces named after it,9
+kimberley,Kimberley,1900-02-15,Second Boer War,Boer War 1899 to 1902,ambiguous,"often the Earl of Kimberley or Kimberley, Notts",173
+paardeberg,Paardeberg,1900-02-27,Second Boer War,Boer War 1899 to 1902,clock,,0
+tugela,Tugela,1900-02-27,Second Boer War,Boer War 1899 to 1902,clock,Tugela Heights,4
+ladysmith,Ladysmith,1900-02-28,Second Boer War,Boer War 1899 to 1902,clock,relief of Ladysmith,73
+mafeking,Mafeking,1900-05-17,Second Boer War,Boer War 1899 to 1902,clock,relief of Mafeking,43
+mons,Mons,1914-08-23,First World War,First World War,clock,,30
+marne,Marne,1914-09-06,First World War,First World War,clock,,30
+ypres,Ypres,1914-10-19,First World War,First World War,clock,first battle,13
+gallipoli,Gallipoli,1915-04-25,First World War,First World War,clock,,5
+anzac,Anzac,1915-04-25,First World War,First World War,clock,,7
+verdun,Verdun,1916-02-21,First World War,First World War,clock,,18
+jutland,Jutland,1916-05-31,First World War,First World War,clock,,34
+somme,Somme,1916-07-01,First World War,First World War,clock,,12
+arras,Arras,1917-04-09,First World War,First World War,clock,,18
+vimy,Vimy,1917-04-09,First World War,First World War,clock,,12
+messines,Messines,1917-06-07,First World War,First World War,clock,,6
+cambrai,Cambrai,1917-11-20,First World War,First World War,clock,,21
+zeebrugge,Zeebrugge,1918-04-23,First World War,First World War,clock,,0
+dunkirk,Dunkirk,1940-05-26,Second World War,Second World War,ambiguous,"an old English place name too (Dunkirk in Kent, Nottingham, Cheshire), long before 1940",55
+tobruk,Tobruk,1941-04-10,Second World War,Second World War,clock,siege,9
+alamein,Alamein,1942-10-23,Second World War,Second World War,clock,second battle,35
+stalingrad,Stalingrad,1942-08-23,Second World War,Second World War,clock,,0
+anzio,Anzio,1944-01-22,Second World War,Second World War,clock,,12
+cassino,Cassino,1944-01-17,Second World War,Second World War,clock,,7
+kohima,Kohima,1944-04-04,Second World War,Second World War,clock,,8
+imphal,Imphal,1944-03-08,Second World War,Second World War,clock,,1
+arnhem,Arnhem,1944-09-17,Second World War,Second World War,clock,,37
+falklands,Falklands,1982-04-02,Falklands War,after 1945,ambiguous,the islands,20

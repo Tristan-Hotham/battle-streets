@@ -1,0 +1,110 @@
+<!-- wp:paragraph -->
+<p><em>Victorian builders named new streets after the latest victory: Alma Road in 1854, Mafeking Street in 1900. So is there a clock buried in our street plans, with Waterloo near the middle of town and Ladysmith on the edge? I mapped every street in the UK named after a battle to find out.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/battle-streets/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24086515">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>On 20 September 1854 British and French troops beat the Russians at the river Alma in the Crimea. Within a few years there were Alma Roads, Alma Streets and Alma Terraces all over Britain, on the new terraces going up on the edge of every growing town. The same happened after Inkerman and Balaclava, and again in 1900 when Ladysmith and Mafeking were relieved. Builders wanted their streets to sound up to date.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That gave me an idea. If every developer named streets after the latest battle, and towns grew outwards, then the battle names should be a kind of clock in the street plan. Trafalgar and Waterloo near the old centre, Alma and Inkerman a ring further out, Ladysmith and Mafeking further still. So I took every street in OpenStreetMap named after a battle and checked.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Waterloo, Alma, Trafalgar</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>First, a lot of cleaning. I set aside 1,008 streets named after battles before 1793, like Blenheim, Naseby and Culloden, because nobody named a street Agincourt Road in 1415. I set aside 654 more whose names usually mean something else: Nile Street is usually the river, Quebec Road the city, Kimberley Road the Earl or the Nottinghamshire town, and Magenta is a colour. That left 1,690 streets named after 54 battles from 1793 to 1944.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Waterloo wins, with 367 streets. The Alma is close behind with 340, then Trafalgar with 241. The names come in bursts. After Waterloo there is a gap of almost forty years with only 18 streets, then the Crimean War, which lasted two years, gave 425. That is more than both world wars put together (315).</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_bursts.png|Bar chart of streets named after each battle by the date of the battle: tall bars for Trafalgar and Waterloo, an empty gap, a tall bar for the Alma in 1854, and smaller clusters for the Boer War and both world wars|Streets named after each battle, by the date of the battle.}}
+
+<!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p>A two-year war in the Crimea gave Britain 425 street names. Both world wars together gave 315.</p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:paragraph -->
+<p>The world-war streets are different in another way too. Only 13% of the streets named after Victorian battles end in Close, Drive, Way, Court or Gardens. For the world-war battles it is 39%. Arnhem Close and Jutland Drive were probably often named decades after the war, as a theme for a new estate.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_style.png|Bar chart of the share of battle streets ending in Street, Road or Terrace against Close, Drive or Way, by war, with far more Closes and Drives for the world wars|The last word of battle street names, by war.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Is the clock there?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To test it I kept the streets with an old-fashioned street word (Street, Road, Terrace, Place, Grove), in towns of 20,000 people or more, and for each town with at least four of them I checked whether the later battles lie further from the centre. In 53 of 75 towns they do; in 19 they run the other way. If I shuffle the dates at random within each town, the pattern vanishes, and none of 4,000 shuffles came as high as the real thing. One honest caution: streets of one war often sit side by side, named in one go. Counting each such cluster once, the signal is weaker (27 of 4,000 shuffles come as high), but it is still there.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_clock.png|Chart of where each war's streets sit within their towns, from centre to edge, rising from the Napoleonic wars to the Boer War, and a histogram of town correlations, most of them positive|Where each war's streets sit within their own town, and the correlation of date and distance in each town.}}
+
+<!-- wp:paragraph -->
+<p>In plain distance, the typical Napoleonic battle street is 1.5 km from its town centre, the typical Crimean one 2.0 km and the typical Boer War one 2.4 km. Some towns keep good time. In Bristol the Napoleonic streets are close to the middle and Jutland Road is out at Avonmouth, 8.9 km away. Glasgow and Hull keep good time too.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_towns.png|Six small maps of towns with battle streets around the centre and rings at each war's median distance: in Bristol, Glasgow and Hull the rings widen with time, in Preston they do not|Six town clocks, with rings at the median distance of each war's streets.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A slow clock that runs fast</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>But I should be honest about how good a clock it is. Across half a century it works: in 30 of 40 towns the Napoleonic streets sit closer in than the Boer War ones. Between neighbouring wars it is close to a coin toss: the Napoleonic streets are closer in than the Crimean ones in only 47 of 92 towns. Partly that is because Waterloo and Trafalgar never went out of fashion. Partly it is because towns did not grow in neat rings, but along roads and railways and around mills and docks. London barely shows a clock at all, because it swallowed dozens of older towns, each with its own centre. And Preston and Lincoln run backwards.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_map.png|Map of the UK with battle streets as dots coloured from dark purple for the French wars through pink for the Crimea to orange and yellow for the Boer War and world wars|Every battle street in the UK, coloured by the date of the battle.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The streets come from OpenStreetMap, queried with QLever, matched against a table of 111 battles with their dates. OpenStreetMap often maps one street in several pieces, so I joined pieces with the same name that sit close together. I read the full list of names for every battle and took out the ones that are not streets or not battles: pothole markers, boat moorings, railway sidings, a road named after a woman called Alma Martin (Alma is a woman's name, so some of the newer Alma Closes may be named after people too, though not enough to change the story), and Arras Hill in Yorkshire, which is an old place name. I also set aside streets within 3 km of a place with the same name, like Waterloo on Merseyside, because they are probably named after the place. Each street's town is the nearest town of 20,000 people or more, and the centre is that town's point in Wikidata.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The big caveat: a street name dates the battle, not the street. Most battle streets were probably named within a few years of their battle, but some were named much later, and I cannot tell which from the name alone. So this is a pattern across hundreds of towns, not a way to date your own street. If you live on an Alma Road, though, it may well have been laid out in the late 1850s. I would love to hear if yours was.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/battle-streets/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24086515">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/battle-streets">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Streets: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL), queried with QLever. Towns: Wikidata (CC0). Counties: ONS boundaries (Open Government Licence v3.0). Battle dates: standard reference dates, listed with the data.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>On street names and memory: M. Azaryahu, The power of commemorative street names (1996); R. Rose-Redwood, D. Alderman and M. Azaryahu, Geographies of toponymic inscription (2010). On how British towns grew: M. R. G. Conzen, Alnwick, Northumberland (1960); J. W. R. Whitehand, Building cycles and the spatial pattern of urban growth (1972).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

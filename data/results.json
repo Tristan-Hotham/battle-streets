@@ -1,0 +1,1044 @@
+{
+ "n": {
+  "ways": 6885,
+  "streets_raw": 3361,
+  "dropped_by_hand": 9,
+  "streets": 3352,
+  "merged_ways": 3509,
+  "battles_in_table": 111,
+  "battles_found": 100,
+  "ambiguous": 654,
+  "old": 1008,
+  "place_named": 32,
+  "place_named_all": 82,
+  "clean": 1690,
+  "clock": 1658,
+  "clock_town": 1403,
+  "ambiguous_battles": [
+   "Aboukir",
+   "Alexandria",
+   "Cabul",
+   "Copenhagen",
+   "Crimea",
+   "Delhi",
+   "Dunkirk",
+   "Falklands",
+   "Gibraltar",
+   "Kandahar",
+   "Kimberley",
+   "Magenta",
+   "Minorca",
+   "Nile",
+   "Portobello",
+   "Quebec",
+   "Scinde",
+   "St Vincent",
+   "Vigo"
+  ],
+  "near_duplicates_1500m": 11
+ },
+ "top": [
+  {
+   "battle": "Blenheim",
+   "key": "blenheim",
+   "n": 478,
+   "year": 1704,
+   "flag": "old"
+  },
+  {
+   "battle": "Waterloo",
+   "key": "waterloo",
+   "n": 367,
+   "year": 1815,
+   "flag": ""
+  },
+  {
+   "battle": "Alma",
+   "key": "alma",
+   "n": 340,
+   "year": 1854,
+   "flag": ""
+  },
+  {
+   "battle": "Trafalgar",
+   "key": "trafalgar",
+   "n": 241,
+   "year": 1805,
+   "flag": ""
+  },
+  {
+   "battle": "Kimberley",
+   "key": "kimberley",
+   "n": 173,
+   "year": 1900,
+   "flag": "amb"
+  },
+  {
+   "battle": "Naseby",
+   "key": "naseby",
+   "n": 78,
+   "year": 1645,
+   "flag": "old"
+  },
+  {
+   "battle": "Bosworth",
+   "key": "bosworth",
+   "n": 73,
+   "year": 1485,
+   "flag": "old"
+  },
+  {
+   "battle": "Ladysmith",
+   "key": "ladysmith",
+   "n": 73,
+   "year": 1900,
+   "flag": ""
+  },
+  {
+   "battle": "Quebec",
+   "key": "quebec",
+   "n": 72,
+   "year": 1759,
+   "flag": "amb"
+  },
+  {
+   "battle": "Edgehill",
+   "key": "edgehill",
+   "n": 68,
+   "year": 1642,
+   "flag": "old"
+  },
+  {
+   "battle": "St Vincent",
+   "key": "stvincent",
+   "n": 59,
+   "year": 1797,
+   "flag": "amb"
+  },
+  {
+   "battle": "Inkerman",
+   "key": "inkerman",
+   "n": 57,
+   "year": 1854,
+   "flag": ""
+  },
+  {
+   "battle": "Dunkirk",
+   "key": "dunkirk",
+   "n": 55,
+   "year": 1940,
+   "flag": "amb"
+  },
+  {
+   "battle": "Nile",
+   "key": "nile",
+   "n": 54,
+   "year": 1798,
+   "flag": "amb"
+  },
+  {
+   "battle": "Gibraltar",
+   "key": "gibraltar",
+   "n": 52,
+   "year": 1704,
+   "flag": "amb"
+  }
+ ],
+ "top_clock": [
+  {
+   "battle": "Waterloo",
+   "n": 367,
+   "year": 1815
+  },
+  {
+   "battle": "Alma",
+   "n": 340,
+   "year": 1854
+  },
+  {
+   "battle": "Trafalgar",
+   "n": 241,
+   "year": 1805
+  },
+  {
+   "battle": "Ladysmith",
+   "n": 73,
+   "year": 1900
+  },
+  {
+   "battle": "Inkerman",
+   "n": 57,
+   "year": 1854
+  },
+  {
+   "battle": "Mafeking",
+   "n": 43,
+   "year": 1900
+  },
+  {
+   "battle": "Arnhem",
+   "n": 37,
+   "year": 1944
+  },
+  {
+   "battle": "Alamein",
+   "n": 35,
+   "year": 1942
+  },
+  {
+   "battle": "Jutland",
+   "n": 34,
+   "year": 1916
+  },
+  {
+   "battle": "Colenso",
+   "n": 33,
+   "year": 1899
+  }
+ ],
+ "by_era": {
+  "before 1793": {
+   "n": 1202,
+   "clean": 0,
+   "modern_pc": 0.0
+  },
+  "Napoleonic 1793 to 1815": {
+   "n": 874,
+   "clean": 713,
+   "modern_pc": 28.100470957613815
+  },
+  "1816 to 1853": {
+   "n": 22,
+   "clean": 18,
+   "modern_pc": 27.77777777777778
+  },
+  "Crimea 1854 to 1856": {
+   "n": 439,
+   "clean": 425,
+   "modern_pc": 14.962593516209477
+  },
+  "Indian Rebellion 1857": {
+   "n": 44,
+   "clean": 26,
+   "modern_pc": 29.166666666666668
+  },
+  "1859 to 1898": {
+   "n": 41,
+   "clean": 26,
+   "modern_pc": 0.0
+  },
+  "Boer War 1899 to 1902": {
+   "n": 340,
+   "clean": 167,
+   "modern_pc": 11.428571428571429
+  },
+  "First World War": {
+   "n": 206,
+   "clean": 206,
+   "modern_pc": 45.88235294117647
+  },
+  "Second World War": {
+   "n": 164,
+   "clean": 109,
+   "modern_pc": 45.09803921568628
+  },
+  "after 1945": {
+   "n": 20,
+   "clean": 0,
+   "modern_pc": 0.0
+  }
+ },
+ "wars": {
+  "Anglo-Egyptian War": {
+   "n": 1,
+   "battles": 1
+  },
+  "Anglo-Zulu War": {
+   "n": 3,
+   "battles": 1
+  },
+  "Bombardment of Algiers": {
+   "n": 4,
+   "battles": 1
+  },
+  "Conquest of Sind": {
+   "n": 2,
+   "battles": 1
+  },
+  "Crimean War": {
+   "n": 425,
+   "battles": 4
+  },
+  "First Anglo-Sikh War": {
+   "n": 7,
+   "battles": 4
+  },
+  "First Boer War": {
+   "n": 3,
+   "battles": 1
+  },
+  "First World War": {
+   "n": 206,
+   "battles": 12
+  },
+  "French Revolutionary Wars": {
+   "n": 27,
+   "battles": 1
+  },
+  "Greek War of Independence": {
+   "n": 4,
+   "battles": 1
+  },
+  "Indian Rebellion": {
+   "n": 26,
+   "battles": 2
+  },
+  "Mahdist War": {
+   "n": 16,
+   "battles": 2
+  },
+  "Napoleonic Wars": {
+   "n": 631,
+   "battles": 3
+  },
+  "Peninsular War": {
+   "n": 55,
+   "battles": 5
+  },
+  "Second Anglo-Sikh War": {
+   "n": 1,
+   "battles": 1
+  },
+  "Second Boer War": {
+   "n": 167,
+   "battles": 6
+  },
+  "Second World War": {
+   "n": 109,
+   "battles": 7
+  },
+  "Tirah Campaign": {
+   "n": 3,
+   "battles": 1
+  }
+ },
+ "world_wars": {
+  "n": 315,
+  "pc": 18.63905325443787,
+  "modern_pc": 39.36507936507937,
+  "wwi": 206,
+  "wwii": 109
+ },
+ "victorian": {
+  "n": 644,
+  "modern_pc": 12.888198757763975,
+  "traditional_pc": 78.88198757763976
+ },
+ "battle": {
+  "waterloo": {
+   "n": 367,
+   "modern_pc": 19.891008174386922,
+   "traditional_pc": 68.66485013623979,
+   "towns": 187
+  },
+  "trafalgar": {
+   "n": 241,
+   "modern_pc": 33.19502074688796,
+   "traditional_pc": 58.09128630705395,
+   "towns": 151
+  },
+  "alma": {
+   "n": 340,
+   "modern_pc": 13.823529411764707,
+   "traditional_pc": 79.41176470588235,
+   "towns": 171
+  },
+  "inkerman": {
+   "n": 57,
+   "modern_pc": 21.052631578947366,
+   "traditional_pc": 77.19298245614034,
+   "towns": 45
+  },
+  "ladysmith": {
+   "n": 73,
+   "modern_pc": 12.32876712328767,
+   "traditional_pc": 72.6027397260274,
+   "towns": 50
+  },
+  "mafeking": {
+   "n": 43,
+   "modern_pc": 4.651162790697675,
+   "traditional_pc": 76.74418604651163,
+   "towns": 29
+  },
+  "arnhem": {
+   "n": 37,
+   "modern_pc": 45.94594594594595,
+   "traditional_pc": 43.24324324324324,
+   "towns": 27
+  },
+  "alamein": {
+   "n": 35,
+   "modern_pc": 40.0,
+   "traditional_pc": 51.42857142857142,
+   "towns": 28
+  },
+  "jutland": {
+   "n": 34,
+   "modern_pc": 44.11764705882353,
+   "traditional_pc": 41.17647058823529,
+   "towns": 26
+  },
+  "mons": {
+   "n": 30,
+   "modern_pc": 40.0,
+   "traditional_pc": 30.0,
+   "towns": 25
+  },
+  "blenheim": {
+   "n": 478,
+   "modern_pc": 53.34728033472803,
+   "traditional_pc": 38.49372384937239,
+   "towns": 242
+  },
+  "kimberley": {
+   "n": 173,
+   "modern_pc": 27.74566473988439,
+   "traditional_pc": 61.27167630057804,
+   "towns": 116
+  }
+ },
+ "crimea_vs_before": {
+  "crimea": 425,
+  "before": 18
+ },
+ "counties": [
+  {
+   "county": "Greater London",
+   "n": 126,
+   "top": "Alma"
+  },
+  {
+   "county": "Greater Manchester",
+   "n": 91,
+   "top": "Alma"
+  },
+  {
+   "county": "West Yorkshire",
+   "n": 82,
+   "top": "Alma"
+  },
+  {
+   "county": "Kent",
+   "n": 67,
+   "top": "Alma"
+  },
+  {
+   "county": "West Midlands",
+   "n": 66,
+   "top": "Alma"
+  },
+  {
+   "county": "Hampshire",
+   "n": 64,
+   "top": "Trafalgar"
+  },
+  {
+   "county": "Lancashire",
+   "n": 49,
+   "top": "Alma"
+  },
+  {
+   "county": "Lincolnshire",
+   "n": 49,
+   "top": "Waterloo"
+  },
+  {
+   "county": "North Yorkshire",
+   "n": 48,
+   "top": "Alma"
+  },
+  {
+   "county": "Devon",
+   "n": 47,
+   "top": "Trafalgar"
+  }
+ ],
+ "nations": {
+  "England": 1453,
+  "Wales": 107,
+  "Scotland": 102,
+  "Northern Ireland": 28
+ },
+ "test": {
+  "label": "traditional street words, towns with 4 or more",
+  "perm_count": 0,
+  "reps": 4000,
+  "towns": 75,
+  "streets": 549,
+  "mean_rho": 0.25488368991734384,
+  "median_rho": 0.316227766016838,
+  "positive": 53,
+  "negative": 19,
+  "sign_p": 3.777905742215698e-05,
+  "perm_p": 0.00024993751562109475,
+  "null_975": 0.10605001321984878,
+  "wmean_rho": 0.23430437197632567
+ },
+ "test_all": {
+  "label": "all street words, towns with 4 or more",
+  "perm_count": 6,
+  "reps": 4000,
+  "towns": 110,
+  "streets": 888,
+  "mean_rho": 0.14208963613819775,
+  "median_rho": 0.14252260969171876,
+  "positive": 66,
+  "negative": 41,
+  "sign_p": 0.009950190127234363,
+  "perm_p": 0.0017495626093476631,
+  "null_975": 0.08679698499860136,
+  "wmean_rho": 0.14820011699828714
+ },
+ "test_min6": {
+  "label": "traditional, towns with 6 or more",
+  "perm_count": 0,
+  "reps": 4000,
+  "towns": 36,
+  "streets": 378,
+  "mean_rho": 0.2539717090852751,
+  "median_rho": 0.2608196871467573,
+  "positive": 25,
+  "negative": 9,
+  "sign_p": 0.004520592745393515,
+  "perm_p": 0.00024993751562109475,
+  "null_975": 0.12743280361514714,
+  "wmean_rho": 0.22925991423580028
+ },
+ "test_victorian": {
+  "label": "traditional, 1793 to 1902 only",
+  "perm_count": 4,
+  "reps": 4000,
+  "towns": 62,
+  "streets": 439,
+  "mean_rho": 0.1839756348764558,
+  "median_rho": 0.3115603255522429,
+  "positive": 40,
+  "negative": 20,
+  "sign_p": 0.00674464686559593,
+  "perm_p": 0.0012496875781054736,
+  "null_975": 0.11808174116435691,
+  "wmean_rho": 0.19724184104184408
+ },
+ "test_no_london": {
+  "label": "traditional, without London",
+  "perm_count": 0,
+  "reps": 4000,
+  "towns": 74,
+  "streets": 465,
+  "mean_rho": 0.25676488001184544,
+  "median_rho": 0.316227766016838,
+  "positive": 52,
+  "negative": 19,
+  "sign_p": 5.6134323447494e-05,
+  "perm_p": 0.00024993751562109475,
+  "null_975": 0.1092425825834424,
+  "wmean_rho": 0.25573408148251203
+ },
+ "test_cluster": {
+  "label": "traditional, same-war streets within 500 m counted once",
+  "perm_count": 27,
+  "reps": 4000,
+  "towns": 51,
+  "streets": 370,
+  "mean_rho": 0.16288209987738964,
+  "median_rho": 0.17654696590094993,
+  "positive": 32,
+  "negative": 17,
+  "sign_p": 0.022192080493574906,
+  "perm_p": 0.0069982504373906525,
+  "null_975": 0.1316289870395409,
+  "wmean_rho": 0.15380710522775776,
+  "units_all": 792
+ },
+ "era_pct": {
+  "Napoleonic 1793 to 1815": {
+   "n": 254,
+   "mean": 0.5424231990669,
+   "lo": 0.5053108927653711,
+   "hi": 0.5785661521057682,
+   "median_km": 1.4529558010607182
+  },
+  "1816 to 1853": {
+   "n": 10,
+   "mean": 0.4110714285714286,
+   "lo": 0.2535654761904762,
+   "hi": 0.585157738095238,
+   "median_km": 5.62550391774861
+  },
+  "Crimea 1854 to 1856": {
+   "n": 203,
+   "mean": 0.5835994738704099,
+   "lo": 0.5446874986330036,
+   "hi": 0.622533421012485,
+   "median_km": 2.010303573476408
+  },
+  "Indian Rebellion 1857": {
+   "n": 11,
+   "mean": 0.5153679653679655,
+   "lo": 0.33851190476190474,
+   "hi": 0.6949458874458873,
+   "median_km": 1.9501039658133992
+  },
+  "1859 to 1898": {
+   "n": 20,
+   "mean": 0.6485515873015874,
+   "lo": 0.5394766865079365,
+   "hi": 0.7531180555555553,
+   "median_km": 1.8195700635338585
+  },
+  "Boer War 1899 to 1902": {
+   "n": 93,
+   "mean": 0.6763014017046276,
+   "lo": 0.6258498285615222,
+   "hi": 0.7249281259361904,
+   "median_km": 2.35856735409003
+  },
+  "First World War": {
+   "n": 56,
+   "mean": 0.6571957308564451,
+   "lo": 0.5822203280350603,
+   "hi": 0.7305771547401012,
+   "median_km": 2.998784581798768
+  },
+  "Second World War": {
+   "n": 35,
+   "mean": 0.6229722658294087,
+   "lo": 0.5444132653061224,
+   "hi": 0.6999591836734693,
+   "median_km": 1.6364443828927173
+  }
+ },
+ "era_pct_n": 682,
+ "era_pct_towns": 119,
+ "long_clocks": [
+  {
+   "town": "London",
+   "n": 84,
+   "eras": 4,
+   "rho": 0.11567562292422302,
+   "nap": 11.448094981717126,
+   "crimea": 10.635725984648879,
+   "boer": 11.649702523142594,
+   "wwi": 13.43901254671729
+  },
+  {
+   "town": "Bristol",
+   "n": 15,
+   "eras": 4,
+   "rho": 0.6613349483938331,
+   "nap": 1.4476954853201147,
+   "crimea": 4.543750147935996,
+   "boer": 3.4642930587750946,
+   "wwi": 8.900251231170168
+  },
+  {
+   "town": "Preston",
+   "n": 10,
+   "eras": 4,
+   "rho": -0.3333905039594862,
+   "nap": 2.1840677531945714,
+   "crimea": 1.7097516923912104,
+   "boer": 2.26837468955002,
+   "wwi": 0.552345588290978
+  },
+  {
+   "town": "Sunderland",
+   "n": 10,
+   "eras": 4,
+   "rho": 0.25689154519615076,
+   "nap": 0.13966283701717216,
+   "crimea": 3.2157336613842666,
+   "boer": 2.23404788837352,
+   "wwi": 0.758383598305565
+  },
+  {
+   "town": "Cheltenham",
+   "n": 9,
+   "eras": 4,
+   "rho": 0.6108840083916779,
+   "nap": 1.4357733349908377,
+   "crimea": 1.6234214851646234,
+   "boer": 2.3135591612101902,
+   "wwi": 2.374835427201407
+  },
+  {
+   "town": "Glasgow",
+   "n": 8,
+   "eras": 4,
+   "rho": 0.7470421737034139,
+   "nap": 0.6786176994475912,
+   "crimea": 1.8141385629487705,
+   "boer": 3.5519621041205323,
+   "wwi": 2.3272062955861657
+  },
+  {
+   "town": "Kingston upon Hull",
+   "n": 8,
+   "eras": 4,
+   "rho": 0.8434347122457899,
+   "nap": 1.312655205419877,
+   "crimea": 0.6441714475616741,
+   "boer": 2.7910530428555282,
+   "wwi": 2.998784581798768
+  },
+  {
+   "town": "Portsmouth",
+   "n": 7,
+   "eras": 4,
+   "rho": 0.6071428571428572,
+   "nap": 1.1170020759520787,
+   "crimea": 2.8308491801141096,
+   "boer": 2.3641066515578175,
+   "wwi": 3.1956298761713544
+  },
+  {
+   "town": "Stoke-on-Trent",
+   "n": 5,
+   "eras": 4,
+   "rho": 0.09999999999999999,
+   "nap": 3.121808161612306,
+   "crimea": 0.928077299318712,
+   "boer": 2.4369922885364605,
+   "wwi": 4.061302465530077
+  },
+  {
+   "town": "Leeds",
+   "n": 16,
+   "eras": 3,
+   "rho": 0.4254114360897958,
+   "nap": 0.5389589266608504,
+   "crimea": 3.6099606394733836,
+   "boer": 2.2225825690392336,
+   "wwi": null
+  },
+  {
+   "town": "Birmingham",
+   "n": 13,
+   "eras": 3,
+   "rho": 0.2647478290973639,
+   "nap": 4.27289140106147,
+   "crimea": 2.368028414719815,
+   "boer": null,
+   "wwi": 5.681243002262036
+  },
+  {
+   "town": "Plymouth",
+   "n": 13,
+   "eras": 3,
+   "rho": 0.26870733959918613,
+   "nap": 1.718324985446788,
+   "crimea": 1.0846226422026313,
+   "boer": 1.7520588793987542,
+   "wwi": null
+  }
+ ],
+ "long_clocks_n": 44,
+ "crimea_boer_towns": 29,
+ "crimea_inside_boer": 16,
+ "nap_crimea_towns": 37,
+ "nap_inside_crimea": 19,
+ "pairs": {
+  "nap_crimea": {
+   "towns": 92,
+   "inside": 47
+  },
+  "crimea_boer": {
+   "towns": 38,
+   "inside": 23
+  },
+  "boer_wwi": {
+   "towns": 17,
+   "inside": 8
+  },
+  "nap_boer": {
+   "towns": 40,
+   "inside": 30
+  }
+ },
+ "test_towns_signed": 72,
+ "n_battles_clean": 54,
+ "amb_list": "Aboukir, Alexandria, Cabul, Copenhagen, Crimea, Delhi, Dunkirk, Falklands, Gibraltar, Kandahar, Kimberley, Magenta, Minorca, Nile, Portobello, Quebec, Scinde, St Vincent and Vigo",
+ "lc": {
+  "London": {
+   "town": "London",
+   "n": 84,
+   "eras": 4,
+   "rho": 0.11567562292422302,
+   "nap": 11.448094981717126,
+   "crimea": 10.635725984648879,
+   "boer": 11.649702523142594,
+   "wwi": 13.43901254671729
+  },
+  "Bristol": {
+   "town": "Bristol",
+   "n": 15,
+   "eras": 4,
+   "rho": 0.6613349483938331,
+   "nap": 1.4476954853201147,
+   "crimea": 4.543750147935996,
+   "boer": 3.4642930587750946,
+   "wwi": 8.900251231170168
+  },
+  "Preston": {
+   "town": "Preston",
+   "n": 10,
+   "eras": 4,
+   "rho": -0.3333905039594862,
+   "nap": 2.1840677531945714,
+   "crimea": 1.7097516923912104,
+   "boer": 2.26837468955002,
+   "wwi": 0.552345588290978
+  },
+  "Sunderland": {
+   "town": "Sunderland",
+   "n": 10,
+   "eras": 4,
+   "rho": 0.25689154519615076,
+   "nap": 0.13966283701717216,
+   "crimea": 3.2157336613842666,
+   "boer": 2.23404788837352,
+   "wwi": 0.758383598305565
+  },
+  "Cheltenham": {
+   "town": "Cheltenham",
+   "n": 9,
+   "eras": 4,
+   "rho": 0.6108840083916779,
+   "nap": 1.4357733349908377,
+   "crimea": 1.6234214851646234,
+   "boer": 2.3135591612101902,
+   "wwi": 2.374835427201407
+  },
+  "Glasgow": {
+   "town": "Glasgow",
+   "n": 8,
+   "eras": 4,
+   "rho": 0.7470421737034139,
+   "nap": 0.6786176994475912,
+   "crimea": 1.8141385629487705,
+   "boer": 3.5519621041205323,
+   "wwi": 2.3272062955861657
+  },
+  "Kingston upon Hull": {
+   "town": "Kingston upon Hull",
+   "n": 8,
+   "eras": 4,
+   "rho": 0.8434347122457899,
+   "nap": 1.312655205419877,
+   "crimea": 0.6441714475616741,
+   "boer": 2.7910530428555282,
+   "wwi": 2.998784581798768
+  },
+  "Portsmouth": {
+   "town": "Portsmouth",
+   "n": 7,
+   "eras": 4,
+   "rho": 0.6071428571428572,
+   "nap": 1.1170020759520787,
+   "crimea": 2.8308491801141096,
+   "boer": 2.3641066515578175,
+   "wwi": 3.1956298761713544
+  },
+  "Stoke-on-Trent": {
+   "town": "Stoke-on-Trent",
+   "n": 5,
+   "eras": 4,
+   "rho": 0.09999999999999999,
+   "nap": 3.121808161612306,
+   "crimea": 0.928077299318712,
+   "boer": 2.4369922885364605,
+   "wwi": 4.061302465530077
+  },
+  "Leeds": {
+   "town": "Leeds",
+   "n": 16,
+   "eras": 3,
+   "rho": 0.4254114360897958,
+   "nap": 0.5389589266608504,
+   "crimea": 3.6099606394733836,
+   "boer": 2.2225825690392336,
+   "wwi": null
+  },
+  "Birmingham": {
+   "town": "Birmingham",
+   "n": 13,
+   "eras": 3,
+   "rho": 0.2647478290973639,
+   "nap": 4.27289140106147,
+   "crimea": 2.368028414719815,
+   "boer": null,
+   "wwi": 5.681243002262036
+  },
+  "Plymouth": {
+   "town": "Plymouth",
+   "n": 13,
+   "eras": 3,
+   "rho": 0.26870733959918613,
+   "nap": 1.718324985446788,
+   "crimea": 1.0846226422026313,
+   "boer": 1.7520588793987542,
+   "wwi": null
+  }
+ },
+ "tc": {
+  "Aberdeen": 0.7745966692414834,
+  "Aldershot": -0.7999999999999999,
+  "Ashton-under-Lyne": -0.8944271909999159,
+  "Barnsley": 0.35355339059327373,
+  "Belfast": 0.8116794499134278,
+  "Bingley": 0.8944271909999159,
+  "Birkenhead": -0.6000000000000001,
+  "Birmingham": 0.2647478290973639,
+  "Bishop Auckland": -0.21081851067789195,
+  "Blackburn": 0.7745966692414834,
+  "Blackpool": 0.753702346348183,
+  "Bolton": 0.6668859288553503,
+  "Brighton": 0.7968190728895957,
+  "Bristol": 0.6613349483938331,
+  "Burnley": 0.9486832980505139,
+  "Canterbury": 0.316227766016838,
+  "Cardiff": 0.0,
+  "Chelmsford": 0.35909242322980395,
+  "Cheltenham": 0.6108840083916779,
+  "Chester": 1.0,
+  "Chesterfield": -0.7745966692414834,
+  "Colchester": -0.08127665166512525,
+  "Derby": 0.6377481392176932,
+  "Dover": 0.030358837035945815,
+  "Dundee": 0.2581988897471611,
+  "Eccles": 0.7999999999999999,
+  "Exeter": -0.26482044885142486,
+  "Falkirk": 0.7745966692414834,
+  "Farsley": -0.35909242322980395,
+  "Glasgow": 0.7470421737034139,
+  "Great Yarmouth": 0.7378647873726218,
+  "Halifax": 0.7944613465542746,
+  "Hastings": 0.9486832980505139,
+  "Huyton": -0.6982532518267538,
+  "Inverness": 0.3,
+  "Ipswich": -0.7378647873726218,
+  "Keighley": 0.35355339059327373,
+  "Kingston upon Hull": 0.8434347122457899,
+  "Leeds": 0.4254114360897958,
+  "Lincoln": -0.8420413371357598,
+  "London": 0.11567562292422302,
+  "Lowestoft": 0.15389675281277312,
+  "Manchester": 0.025537695922762456,
+  "Merthyr Tydfil": 0.19139266365157484,
+  "Newcastle upon Tyne": 0.7745966692414834,
+  "Newport": 0.24325638628366394,
+  "Norwich": 0.1454785934906616,
+  "Nottingham": 0.48492864496887195,
+  "Oldham": 0.6668859288553503,
+  "Peterborough": 0.39999999999999997,
+  "Plymouth": 0.26870733959918613,
+  "Port Talbot": 0.0,
+  "Portsmouth": 0.6071428571428572,
+  "Preston": -0.3333905039594862,
+  "Pudsey": 0.8783100656536799,
+  "Ramsgate": -0.2704493615131253,
+  "Rochdale": -0.07319250547113999,
+  "Scarborough": -0.8660254037844386,
+  "Sheffield": 0.3915780041490244,
+  "Smethwick": -0.3353353533357125,
+  "Southampton": 0.6728384948943099,
+  "Southport": -0.316227766016838,
+  "St Helens": 0.7378647873726218,
+  "Stockport": -0.12996881122750908,
+  "Stockton-on-Tees": 0.7745966692414834,
+  "Stoke-on-Trent": 0.09999999999999999,
+  "Sunderland": 0.25689154519615076,
+  "Swansea": 0.51234753829798,
+  "Swindon": 0.0,
+  "Tipton": 0.46169025843831935,
+  "Washington": 0.10540925533894598,
+  "Weymouth": 0.316227766016838,
+  "Wolverhampton": 0.7745966692414834,
+  "Worcester": 0.21081851067789195,
+  "York": -0.20519567041703085
+ },
+ "counties_england": 46,
+ "alma_top_counties": 18,
+ "trafalgar_top_counties": [
+  "Buckinghamshire",
+  "Cambridgeshire",
+  "Cumbria",
+  "Devon",
+  "East Riding of Yorkshire",
+  "East Sussex",
+  "Hampshire",
+  "Isle of Wight",
+  "Northamptonshire",
+  "Northumberland",
+  "West Sussex"
+ ],
+ "alma_check": {
+  "n": 340,
+  "not_traditional": 70,
+  "isolated": 50,
+  "n_min": 290,
+  "crimea_min": 375
+ },
+ "test_level": 3,
+ "place_examples": [
+  [
+   "waterloo",
+   "Waterloo",
+   "Gwent",
+   4
+  ],
+  [
+   "waterloo",
+   "Waterloo",
+   "Greater London",
+   4
+  ],
+  [
+   "waterloo",
+   "Waterloo",
+   "Greater Manchester",
+   3
+  ],
+  [
+   "waterloo",
+   "Waterloo",
+   "Merseyside",
+   2
+  ],
+  [
+   "waterloo",
+   "Waterloo",
+   "West Yorkshire",
+   2
+  ],
+  [
+   "camperdown",
+   "Camperdown",
+   "Dundee City",
+   2
+  ],
+  [
+   "waterloo",
+   "Waterloo Port",
+   "Gwynedd",
+   2
+  ],
+  [
+   "inkerman",
+   "Inkerman",
+   "Durham",
+   2
+  ]
+ ]
+}

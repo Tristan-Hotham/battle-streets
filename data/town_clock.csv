@@ -1,0 +1,76 @@
+town,n,rho,years
+London,84,0.116,21
+Leeds,16,0.425,5
+Bristol,15,0.661,7
+Plymouth,13,0.269,9
+Birmingham,13,0.265,6
+Colchester,12,-0.081,8
+Merthyr Tydfil,11,0.191,3
+Preston,10,-0.333,6
+Sunderland,10,0.257,7
+Manchester,9,0.026,6
+Cheltenham,9,0.611,8
+Sheffield,9,0.392,6
+Stockport,9,-0.13,4
+Smethwick,8,-0.335,7
+Swansea,8,0.512,6
+Rochdale,8,-0.073,6
+Nottingham,8,0.485,5
+Glasgow,8,0.747,6
+Kingston upon Hull,8,0.843,6
+Lincoln,7,-0.842,4
+Cardiff,7,0.0,5
+Brighton,7,0.797,3
+Norwich,7,0.145,5
+Swindon,7,0.0,6
+Southampton,7,0.673,5
+Newport,7,0.243,4
+Portsmouth,7,0.607,7
+Pudsey,6,0.878,2
+Belfast,6,0.812,5
+Ramsgate,6,-0.27,3
+Huyton,6,-0.698,4
+Halifax,6,0.794,4
+Dover,6,0.03,4
+Derby,6,0.638,5
+Exeter,6,-0.265,4
+Blackpool,6,0.754,5
+York,5,-0.205,4
+Scarborough,5,-0.866,2
+Port Talbot,5,0.0,2
+Oldham,5,0.667,4
+Aldershot,5,-0.8,5
+Barnsley,5,0.354,2
+Bingley,5,0.894,3
+Inverness,5,0.3,5
+Lowestoft,5,0.154,4
+Bolton,5,0.667,4
+Chelmsford,5,0.359,4
+Keighley,5,0.354,2
+Tipton,5,0.462,4
+Stoke-on-Trent,5,0.1,5
+Farsley,5,-0.359,4
+Blackburn,4,0.775,2
+Bishop Auckland,4,-0.211,3
+Birkenhead,4,-0.6,4
+Ashton-under-Lyne,4,-0.894,2
+Aberdeen,4,0.775,2
+Burnley,4,0.949,3
+Canterbury,4,0.316,3
+Eccles,4,0.8,4
+Ipswich,4,-0.738,3
+Falkirk,4,0.775,2
+Great Yarmouth,4,0.738,3
+Hastings,4,0.949,3
+Chester,4,1.0,4
+Chesterfield,4,-0.775,2
+Dundee,4,0.258,2
+Peterborough,4,0.4,4
+Newcastle upon Tyne,4,0.775,2
+Stockton-on-Tees,4,0.775,2
+Southport,4,-0.316,3
+St Helens,4,0.738,3
+Washington,4,0.105,3
+Weymouth,4,0.316,3
+Wolverhampton,4,0.775,2
+Worcester,4,0.211,4

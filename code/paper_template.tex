@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\headfont{Inter}[UprightFont=*-ExtraBold,BoldFont=*-ExtraBold,Extension=.otf,Path=/usr/share/fonts/opentype/inter/]
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{graphicx,booktabs,float,caption,array,xcolor,longtable}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage[round]{natbib}
+\usepackage{setspace}
+\setstretch{1.05}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\titleformat{\section}{\headfont\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\headfont\large}{\thesubsection}{0.8em}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\hypersetup{pdftitle={Waterloo Road and the Clock in the Streets},pdfauthor={Tristan Hotham}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries Waterloo Road and the Clock in the Streets\par}
+\vspace{0.4em}
+{\large Battle street names and the growth of British towns, from OpenStreetMap\par}
+\vspace{1.2em}
+{\large Tristan Hotham\par}
+\vspace{0.3em}
+{\small Independent researcher\\
+ORCID: 0000-0003-4931-9349\\
+DOI: https://doi.org/10.5281/zenodo.24086515\par}
+\vspace{0.8em}
+2026
+\end{center}
+
+\begin{quote}
+\small
+\begin{center}\textbf{Abstract}\end{center}
+Nineteenth-century builders often named new streets after recent victories, so battle names may record when a street was laid out. I match {{n.ways|int}} OpenStreetMap highways in the United Kingdom against a table of {{n.battles_in_table|int}} battles, join the pieces of each street into {{n.streets|int}} streets, and set aside streets named after battles before 1793 ({{n.old|int}}) and names that usually refer to something else ({{n.ambiguous|int}}: Nile, Quebec, Kimberley and others). Of {{n.clean|int}} streets named after {{n_battles_clean|int}} battles from 1793 to 1944, Waterloo ({{top_clock.0.n|int}}), Alma ({{top_clock.1.n|int}}) and Trafalgar ({{top_clock.2.n|int}}) lead; the four Crimean battles gave {{crimea_vs_before.crimea|int}} streets, more than both world wars together ({{world_wars.n|int}}), and world-war names are much more often modern estate names ({{world_wars.modern_pc|f1}}\% Close, Drive, Way and the like, against {{victorian.modern_pc|f1}}\% for 1854 to 1902). Within towns, streets named after later battles lie farther from the centre: the mean within-town Spearman correlation of battle date and distance is {{test.mean_rho|f2}} across {{test.towns|int}} towns ({{test.positive|int}} positive, {{test.negative|int}} negative; permutation $p<0.001$, or $p<0.01$ with clusters of same-war streets counted once). Ranked within their towns, Napoleonic streets sit at {{era_pct.Napoleonic 1793 to 1815.mean|f2}}, Crimean at {{era_pct.Crimea 1854 to 1856.mean|f2}} and Boer War streets at {{era_pct.Boer War 1899 to 1902.mean|f2}} of the way from centre to edge. The clock is real but coarse: it separates wars half a century apart, not neighbouring ones.
+
+\textbf{Keywords:} street names; commemoration; urban growth; toponymy; battles; OpenStreetMap
+\end{quote}
+
+\section{Introduction}
+Street names are a public record of what a society chose to commemorate \citep{azaryahu1996,alderman2000,roseredwood2010}. In Victorian Britain one common choice was the latest victory: Alma Road and Inkerman Street after 1854, Ladysmith Road and Mafeking Street in 1900. If developers named streets as they were laid out, and if towns grew outwards, battle names should form a crude clock in the street plan, with older victories near the centre and newer ones farther out, echoing the rings of growth that urban morphologists have traced in British towns \citep{conzen1960,whitehand1972}. This paper asks whether the clock is there, using an open map of every street in the United Kingdom.
+
+\section{Data}
+\textbf{Streets.} OpenStreetMap ways with a \texttt{highway} tag in the United Kingdom whose names contain a battle name, queried with QLever \citep{bast2017}: {{n.ways|int}} ways with highway type, name and first coordinate. OpenStreetMap's coverage of names is good in towns but uneven \citep{haklay2010}. \textbf{Towns.} Wikidata settlements typed as towns or cities with a population (CC0). \textbf{Counties.} ONS boundaries.
+
+\textbf{Battle table.} Each battle has the date of the battle, or for a siege the date of its relief or fall (Table~\ref{tab:battles}). Battles before 1793 are kept but set aside from the clock, since a street named Naseby or Agincourt was named centuries after the event. Names that usually refer to a place, a person or a colour are flagged as ambiguous and set aside: {{amb_list}}. The Nile, for example, is far more often the river; London's Copenhagen Street takes its name from the area around Copenhagen House, a seventeenth-century house far older than the battle; Dunkirk was an English place name long before 1940; Magenta is a colour, itself named after the battle.
+
+\section{Method}
+\textbf{Matching and joining.} Names were matched to the battle table as whole words; names of twin towns (Villiers-sur-Marne Avenue) were excluded. Pieces with the same normalised name were joined when their first points chain within 600 m, and pieces of through roads (primary to unclassified, tracks, cycle paths) within 1.5 km, which joined {{n.merged_ways|int}} pieces into others; {{n.near_duplicates_1500m|int}} pairs of same-named streets within 1.5 km remain separate, since they may be distinct streets. The full list of names for each battle was read; {{n.dropped_by_hand|int}} were removed by hand (\texttt{code/overrides.csv}): non-streets such as pothole markers, moorings and railway sidings, Alma Martin Way, De-Verdun Avenue, and Arras Hill near Market Weighton, an old Yorkshire place name. {{n.place_named|int}} streets named after battles from 1793 on lie within 3 km of a Wikidata place containing the battle's name (Waterloo in London and on Merseyside, Inkerman in County Durham, Camperdown in Dundee) and are set aside as probably named after the place.
+
+\textbf{Towns and distance.} Each street is assigned to the nearest town of at least 20,000 people within 10 km, with all of Greater London counted as London, and its distance from the town's Wikidata point is measured. \textbf{Street words.} The last word of the name is classed as traditional (Street, Road, Terrace, Place, Row, Square, Grove, Crescent, Lane, Villas and similar), modern (Close, Drive, Way, Court, Mews, Rise, View, Gardens and similar) or other.
+
+\textbf{The clock test.} The main test uses streets named after battles from 1793 on, with a traditional street word, not ambiguous or place-named, in a town. For each town with at least four such streets and two distinct battle years, I compute Spearman's rank correlation between battle year and distance from the centre. The statistic is the mean correlation across towns; its null distribution comes from {{test.reps|int}} permutations of battle years within towns, which keeps each town's set of distances and dates. A sign test on the number of positive and negative towns is reported alongside. As a second view, each street's distance is ranked within its town (towns with three or more streets) and the mean rank percentile is computed for each war with a bootstrap interval; with no clock every war would sit at 0.5.
+
+{{TABLE_BATTLES}}
+
+\section{Results}
+\subsection{Which battles}
+The {{n.clean|int}} streets after battles from 1793 on are dominated by three names: Waterloo ({{top_clock.0.n|int}}), Alma ({{top_clock.1.n|int}}) and Trafalgar ({{top_clock.2.n|int}}), followed by Ladysmith ({{top_clock.3.n|int}}), Inkerman ({{top_clock.4.n|int}}) and Mafeking ({{top_clock.5.n|int}}) (Figure~\ref{fig:bursts}). Before 1793, Blenheim is the commonest battle name of all ({{top.0.n|int}}), though often through Blenheim Palace. The names come in bursts: after Waterloo the battles of 1816 to 1853 gave only {{by_era.1816 to 1853.clean|int}} streets, while the Crimean War gave {{crimea_vs_before.crimea|int}} in two years. The First World War gave {{world_wars.wwi|int}} and the Second {{world_wars.wwii|int}}. By county, Greater London ({{counties.0.n|int}}), Greater Manchester ({{counties.1.n|int}}) and West Yorkshire ({{counties.2.n|int}}) have the most; the Alma is the commonest battle in {{alma_top_counties|int}} of {{counties_england|int}} English counties, and Trafalgar leads in naval Hampshire and Devon (Figure~\ref{fig:map}).
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_bursts.png}
+\caption{Streets named after each battle from 1793 on, by the date of the battle.}\label{fig:bursts}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.8\textwidth]{f_map.png}
+\caption{Battle streets in the United Kingdom, coloured by the date of the battle; grey: older battles and ambiguous names.}\label{fig:map}\end{figure}
+
+\subsection{Named at the time, or later?}
+For battles from 1854 to 1902, {{victorian.traditional_pc|f1}}\% of streets end in a traditional word and {{victorian.modern_pc|f1}}\% in a modern one. For the world-war battles the modern share is {{world_wars.modern_pc|f1}}\% (Figure~\ref{fig:style}), consistent with many of those names being chosen as estate themes decades after the war. Waterloo and Trafalgar also kept being reused: {{battle.trafalgar.modern_pc|f1}}\% of Trafalgar streets and {{battle.waterloo.modern_pc|f1}}\% of Waterloo streets have a modern street word. This is why the main test uses traditional street words only.
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{f_style.png}
+\caption{The last word of battle street names, by war.}\label{fig:style}\end{figure}
+
+\subsection{The clock}
+Across {{test.towns|int}} towns with four or more streets ({{test.streets|int}} streets), the mean within-town correlation of battle year and distance is {{test.mean_rho|f2}} (median {{test.median_rho|f2}}); {{test.positive|int}} towns are positive and {{test.negative|int}} negative (sign test $p={{test.sign_p|f5}}$). None of {{test.reps|int}} within-town permutations reached the observed mean; the 97.5th percentile of the null is {{test.null_975|f2}} (Figure~\ref{fig:clock}). The result holds without London (mean {{test_no_london.mean_rho|f2}}, {{test_no_london.towns|int}} towns), for towns with six or more streets ({{test_min6.mean_rho|f2}}, {{test_min6.towns|int}} towns), and for battles up to 1902 only ({{test_victorian.mean_rho|f2}}, {{test_victorian.towns|int}} towns, {{test_victorian.perm_count|int}} of {{test_victorian.reps|int}} permutations as high). With all street words it is weaker ({{test_all.mean_rho|f2}}, {{test_all.towns|int}} towns, {{test_all.perm_count|int}} of {{test_all.reps|int}} permutations as high), as expected if modern names were given late. The permutation test treats streets as independent, but streets of one war often stand together and were probably named together. Counting each cluster of same-war streets within 500 m of each other in a town as one unit ({{test_cluster.units_all|int}} units), the mean correlation falls to {{test_cluster.mean_rho|f2}} across {{test_cluster.towns|int}} towns ({{test_cluster.positive|int}} positive, {{test_cluster.negative|int}} negative), with {{test_cluster.perm_count|int}} of {{test_cluster.reps|int}} permutations as high ($p={{test_cluster.perm_p|f3}}$). The clock survives, but the street-level test overstates its precision.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_clock.png}
+\caption{Left: mean within-town rank of distance by war, with 95\% bootstrap intervals. Right: within-town correlations of battle date and distance.}\label{fig:clock}\end{figure}
+
+Within their towns, Napoleonic streets sit at a mean rank of {{era_pct.Napoleonic 1793 to 1815.mean|f2}} (interval {{era_pct.Napoleonic 1793 to 1815.lo|f2}} to {{era_pct.Napoleonic 1793 to 1815.hi|f2}}), Crimean at {{era_pct.Crimea 1854 to 1856.mean|f2}} ({{era_pct.Crimea 1854 to 1856.lo|f2}} to {{era_pct.Crimea 1854 to 1856.hi|f2}}), Boer War at {{era_pct.Boer War 1899 to 1902.mean|f2}} ({{era_pct.Boer War 1899 to 1902.lo|f2}} to {{era_pct.Boer War 1899 to 1902.hi|f2}}) and First World War at {{era_pct.First World War.mean|f2}}; median distances are {{era_pct.Napoleonic 1793 to 1815.median_km|f2}}, {{era_pct.Crimea 1854 to 1856.median_km|f2}}, {{era_pct.Boer War 1899 to 1902.median_km|f2}} and {{era_pct.First World War.median_km|f2}} km.
+
+\subsection{A coarse clock}
+Pairwise, the clock separates wars far apart but not neighbours. Napoleonic streets are nearer the centre than Boer War streets in {{pairs.nap_boer.inside|int}} of {{pairs.nap_boer.towns|int}} towns with both, Crimean than Boer War in {{pairs.crimea_boer.inside|int}} of {{pairs.crimea_boer.towns|int}}, but Napoleonic than Crimean in only {{pairs.nap_crimea.inside|int}} of {{pairs.nap_crimea.towns|int}}, and Boer War than First World War in {{pairs.boer_wwi.inside|int}} of {{pairs.boer_wwi.towns|int}}. Individual towns vary (Figure~\ref{fig:towns}): Bristol ({{tc.Bristol|f2}}), Glasgow ({{tc.Glasgow|f2}}) and Hull ({{tc.Kingston upon Hull|f2}}) keep good time, London barely ({{tc.London|f2}}), and Preston ({{tc.Preston|f2}}) and Lincoln ({{tc.Lincoln|f2}}) run backwards.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_towns.png}
+\caption{Six towns: battle streets around the centre and the median distance of each war's streets.}\label{fig:towns}\end{figure}
+
+\section{Limitations}
+The name dates the battle, not the street: some streets were named long after their battle, some renamed, and Waterloo and Trafalgar especially stayed in fashion. The traditional street-word filter reduces but does not remove late naming. Towns did not grow in rings: they grew along roads and railways and around industry, and a conurbation's streets are assigned to whichever town point is nearest, which compresses distances. Town centres are Wikidata points. Alma is also a woman's name: {{alma_check.not_traditional|int}} of the {{alma_check.n|int}} Alma streets lack a traditional street word, and {{alma_check.isolated|int}} of these lie more than 1 km from any traditional Alma street, so some may commemorate a person or a house; even if all {{alma_check.isolated|int}} were removed, the Crimean battles would give {{alma_check.crimea_min|int}} streets, still more than both world wars. These streets are outside the main test, which uses traditional street words only. The ambiguity and place-name rules are judgements, documented in the code; a few ambiguous names may be battles and a few kept names may not be. Each street is placed at the mean of the first points of its pieces. OpenStreetMap names are incomplete in places, and the counts for many battles are small.
+
+\section{Conclusion}
+Battle names do carry a clock. Across British towns, streets named after later battles lie farther from the centre, clearly enough that no shuffle of the dates matched it, though counting clusters of same-war streets once makes the signal weaker. But it is a slow clock that runs fast in places: it tells the French wars from the Boer War, not Waterloo from the Alma. The bursts of names, the Crimea above all, and the shift of world-war names onto post-war estates are as telling as the rings.
+
+\section*{Data and code availability}
+The interactive map is at \url{https://maps.tristanhotham.com/battle-streets/}. Code, the battle table, the rules and hand decisions, and the derived tables are at \url{https://github.com/Tristan-Hotham/battle-streets} and archived with this paper at https://doi.org/10.5281/zenodo.24086515. The street tables are derived from OpenStreetMap (\copyright{} OpenStreetMap contributors) and released under the Open Database Licence; Wikidata is CC0; county boundaries from the ONS (Open Government Licence v3.0); text and figures CC BY 4.0; code MIT.
+
+\section*{AI statement}
+{{AI}}
+
+\begin{thebibliography}{10}
+\bibitem[Alderman(2000)]{alderman2000} Alderman, D. H. (2000) A street fit for a King: naming places and commemoration in the American South. \textit{The Professional Geographer} 52(4), 672 to 684.
+\bibitem[Azaryahu(1996)]{azaryahu1996} Azaryahu, M. (1996) The power of commemorative street names. \textit{Environment and Planning D: Society and Space} 14(3), 311 to 330.
+\bibitem[Bast and Buchhold(2017)]{bast2017} Bast, H. and Buchhold, B. (2017) QLever: a query engine for efficient SPARQL+Text search. \textit{Proceedings of the 2017 ACM Conference on Information and Knowledge Management (CIKM)}, 647 to 656.
+\bibitem[Conzen(1960)]{conzen1960} Conzen, M. R. G. (1960) \textit{Alnwick, Northumberland: A Study in Town-Plan Analysis}. Institute of British Geographers Publication 27. London: George Philip.
+\bibitem[Haklay(2010)]{haklay2010} Haklay, M. (2010) How good is volunteered geographical information? A comparative study of OpenStreetMap and Ordnance Survey datasets. \textit{Environment and Planning B: Planning and Design} 37(4), 682 to 703.
+\bibitem[Rose-Redwood et al.(2010)]{roseredwood2010} Rose-Redwood, R., Alderman, D. and Azaryahu, M. (2010) Geographies of toponymic inscription: new directions in critical place-name studies. \textit{Progress in Human Geography} 34(4), 453 to 470.
+\bibitem[Whitehand(1972)]{whitehand1972} Whitehand, J. W. R. (1972) Building cycles and the spatial pattern of urban growth. \textit{Transactions of the Institute of British Geographers} 56, 39 to 55.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Waterloo Road and the clock in the streets | Battle street names in the UK</title>
+<meta name="description" content="Every UK street named after a battle, from Trafalgar and Waterloo to Alma, Mafeking and Arnhem: do the streets named after later battles lie farther from the town centre?">
+<meta property="og:title" content="Waterloo Road and the clock in the streets">
+<meta property="og:description" content="367 Waterloos, 340 Almas, 241 Trafalgars. In 53 of 75 towns, streets named after later battles lie farther from the centre.">
+<meta property="og:image" content="https://maps.tristanhotham.com/battle-streets/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/battle-streets/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=MedievalSharp&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+
+/* Parchment, iron-gall black, vermilion and river blue: the palette of The Inked World. */
+:root{
+  --bg:#F6EED8; --panel:#EFE3C4; --fg:#2B2119; --muted:#6E604E; --rule:#E2D3AE; --card:#FBF5E4; --border:#D3C29A;
+  --hot:#A3261B; --cool:#3D6E9E; --gold:#B8862B;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --hand:"MedievalSharp","Fraunces",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234;
+  --hot:#E07A6C; --cool:#8FB4DA; --gold:#E2B860; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234;
+  --hot:#E07A6C; --cool:#8FB4DA; --gold:#E2B860; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--hot);color:#fff;padding:5px 8px;font-weight:500}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+p{margin:0 0 16px}
+.lede::first-letter{font:400 76px/.8 var(--hand);float:left;margin:6px 10px 0 0;color:var(--hot)}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+ul.plain{padding-left:20px} ul.plain li{margin:4px 0}
+details{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:18px 0;font-size:16px}
+summary{font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--hot);border-color:var(--hot);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;min-height:28px}
+.figure{margin:22px 0}
+.figure img{width:100%;display:block;border:1px solid var(--border);background:#F3E5BF}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.stat b{display:block;font:900 40px/1 var(--display);color:var(--hot)}
+.stat span{font:400 13px/1.35 var(--mono);color:var(--muted)}
+table.t{width:100%;border-collapse:collapse;font:400 13.5px/1.4 var(--mono);margin:12px 0 4px}
+table.t th{text-align:left;font-weight:500;border-bottom:2px solid var(--fg);padding:5px 6px 5px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:5px 6px 5px 0;vertical-align:top}
+table.t td.r,table.t th.r{text-align:right}
+.tscroll{overflow-x:auto}
+
+/* ---- the map ---- */
+.topbar{height:40px;display:flex;align-items:center;gap:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(14px,env(safe-area-inset-left,0px));border-bottom:3px double var(--fg);background:var(--bg);overflow:hidden;white-space:nowrap}
+.tb-name{font:400 19px/1 var(--hand);color:var(--hot);text-decoration:none;letter-spacing:.03em}
+.tb-k{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tb-links{margin-left:auto;display:flex;gap:16px;align-items:center;font:500 12px/1 var(--mono)}
+.tb-links a{text-decoration:none}.tb-links a:hover{text-decoration:underline}
+.mapband{width:100vw;margin-left:calc(50% - 50vw)}
+.pane{position:relative;height:calc(100vh - 43px);height:calc(100svh - 43px);min-height:460px;border-bottom:1px solid #BCA676;background:#F3E5BF;overflow:hidden;flex:1 1 50%;min-width:0}
+.pane::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;box-shadow:inset 0 0 90px rgba(120,84,30,.22), inset 0 0 18px rgba(120,84,30,.18)}
+.cartouche{position:absolute;left:14px;top:14px;z-index:5;max-width:min(330px,calc(100% - 28px));background:rgba(251,243,220,.95);color:#2B2119;border:2px solid #2B2119;outline:1px solid #2B2119;outline-offset:-6px;padding:10px 14px 10px;box-shadow:0 3px 14px rgba(60,40,10,.22)}
+.cartouche::before,.cartouche::after{content:"";position:absolute;width:9px;height:9px;background:#A3261B;border:1px solid #2B2119;border-radius:50%}
+.cartouche::before{left:-6px;top:-6px}.cartouche::after{right:-6px;bottom:-6px}
+.cartouche h1{font:900 clamp(22px,2.3vw,30px)/1 var(--display);letter-spacing:-.015em;margin:6px 0 0;color:#2B2119}
+.cartouche h1 .a{color:#A3261B;font-family:var(--hand);font-weight:400;letter-spacing:.03em}
+.cartouche .dek{font-size:13.5px;line-height:1.36;margin:6px 0 0}
+.cartouche .byline{font-size:11px;color:#6E604E;margin-top:6px}
+.cartouche .kicker{color:#6E604E}
+.ct-fold{position:absolute;right:6px;top:5px;width:26px;height:26px;border:0;background:none;color:#A3261B;font:400 18px/1 var(--hand);cursor:pointer;padding:0}
+.ct-toggle{display:none;font:400 17px/1 var(--hand);color:#A3261B;background:none;border:0;padding:2px 0;cursor:pointer;letter-spacing:.03em;min-height:30px}
+.cartouche.folded .ct-body,.cartouche.folded .ct-fold{display:none}.cartouche.folded .ct-toggle{display:block}.cartouche.folded{padding:4px 11px}
+.ov{position:absolute;z-index:5;font:400 13px/1.3 var(--mono);color:#2B2119}
+.ov-top{right:54px;top:10px;max-width:calc(100% - 480px);display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none}
+.ov-top>*{pointer-events:auto}
+.srch{position:relative;width:min(340px,100%)}
+.srch input{width:100%;font:400 15px/1 var(--mono);background:rgba(251,245,228,.96);color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:9px 10px;min-height:40px;box-shadow:0 1px 4px rgba(60,40,10,.18)}
+.srch input:focus-visible,.chip:focus-visible,.lp label:focus-within,.tl button:focus-visible{outline:2px solid #A3261B;outline-offset:2px}
+.sug{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:#FBF5E4;border:1px solid #9C8656;max-height:300px;overflow:auto;display:none;box-shadow:0 3px 10px rgba(60,40,10,.2);z-index:12}
+.sug li{padding:8px 10px;cursor:pointer;border-bottom:1px solid #E7D9B6}
+.sug li span{color:#7A6A52;font-size:12px}
+.sug li[aria-selected="true"],.sug li:hover{background:#EFE1BC}
+.chips{display:flex;gap:6px;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:500 12px/1 var(--mono);background:rgba(251,245,228,.94);color:#2B2119;border:1px solid #9C8656;border-radius:999px;padding:8px 11px;cursor:pointer;min-height:34px;white-space:nowrap;box-shadow:0 1px 3px rgba(60,40,10,.14)}
+.chip:hover{background:#EFE1BC}
+.chip.lyr{background:#2B2119;color:#F6EED8;border-color:#2B2119}
+.lp{position:absolute;right:54px;top:104px;z-index:9;background:rgba(251,245,228,.98);border:1px solid #9C8656;border-radius:4px;padding:10px 12px 8px;font:400 13px/1.3 var(--mono);color:#2B2119;box-shadow:0 3px 12px rgba(60,40,10,.25);display:none;min-width:240px;max-height:calc(100% - 200px);overflow:auto}
+.lp.open{display:block}
+.lp h4{margin:0 0 6px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7A6A52}
+.lp h5{margin:9px 0 1px;padding-top:7px;border-top:1px solid #E2D3AE;font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#A3261B}
+.lp h4+h5{border-top:0;padding-top:0;margin-top:4px}
+.lp label{display:flex;gap:8px;align-items:center;padding:5px 0;cursor:pointer;min-height:30px}
+.lp input{accent-color:#A3261B;width:16px;height:16px;flex:none}
+.lp canvas{width:22px;height:22px;flex:none}
+.ov-bl{position:absolute;left:12px;bottom:12px;z-index:4;display:flex;align-items:flex-end;gap:6px;pointer-events:none}
+.rose svg{display:block}
+.maplibregl-popup-content{background:#FBF5E4;color:#2B2119;font:400 13px/1.45 var(--mono);border:1px solid #9C8656;border-radius:4px;padding:10px 12px;box-shadow:0 3px 12px rgba(60,40,10,.25);max-width:310px;max-height:60vh;overflow:auto}
+.maplibregl-popup-content b.t{display:block;font:400 20px/1.15 var(--hand);color:#A3261B;margin-bottom:3px;letter-spacing:.02em;padding-right:14px}
+.maplibregl-popup-content table{border-collapse:collapse;margin:5px 0}
+.maplibregl-popup-content td{padding:1px 8px 1px 0;vertical-align:top}
+.maplibregl-popup-content td:first-child{color:#7A6A52}
+.maplibregl-popup-content .nt{color:#7A6A52;font-size:11.5px;margin:5px 0 0}
+.maplibregl-popup-content .lk{margin-top:6px;padding-top:6px;border-top:1px dashed #C9B583;display:flex;flex-wrap:wrap;gap:4px 12px}
+.maplibregl-popup-content a{color:#A3261B}
+.maplibregl-popup-tip{border-top-color:#9C8656!important;border-bottom-color:#9C8656!important}
+.maplibregl-ctrl-attrib{font:400 11px/1.3 var(--mono)!important;background:rgba(251,245,228,.85)!important}
+.maplibregl-ctrl-group{background:#FBF5E4!important;border:1px solid #9C8656}
+.maplibregl-popup{z-index:7}
+.nojs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 14px var(--mono);color:#6E604E;padding:20px;text-align:center}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 18px;font:400 13px/1.3 var(--mono);color:var(--muted);margin:12px 0}
+.keyrow span{display:flex;align-items:center;gap:6px}.keyrow canvas{width:24px;height:24px}
+@media (max-width:1000px){
+  .ov-top{left:10px;right:54px;max-width:none;align-items:flex-start}
+  .lp{left:10px;right:auto}
+  .cartouche{top:104px}
+}
+@media (max-width:600px){
+  
+  .tb-k,.tb-links a.x{display:none}
+  .topbar{gap:10px}.tb-name{font-size:16px}.tb-links{gap:10px}
+  .lp{top:100px;left:8px;right:8px;min-width:0;max-height:calc(100% - 230px)}
+  .ov-top{left:8px;top:8px}
+  .cartouche{left:8px;top:100px;max-width:calc(100% - 16px);padding:10px 12px}
+  .cartouche h1{font-size:24px}
+  .ct-toggle{display:block}.ct-fold{display:none}
+  .ov-bl{display:none}
+  .maplibregl-ctrl-bottom-right{bottom:84px}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#map{position:absolute;inset:0}
+.chip[aria-pressed="true"]{background:#A3261B;color:#fff;border-color:#2B2119}
+.lp{top:60px}
+.keys{position:absolute;left:12px;bottom:12px;z-index:4;background:rgba(251,243,220,.95);border:1px solid #9C8656;border-radius:3px;padding:8px 10px;font:400 11.5px/1.25 var(--mono);color:#2B2119;max-width:250px;box-shadow:0 2px 8px rgba(60,40,10,.18)}
+.key b{display:block;font:400 15px/1.1 var(--hand);color:#A3261B;margin-bottom:5px;font-weight:400}
+.key .row{display:flex;align-items:center;gap:6px;margin:2px 0}
+.key i{display:inline-block;width:18px;height:11px;border:1px solid rgba(43,33,25,.5);flex:none}
+.key .dot{width:11px;height:11px;border-radius:50%;background:#1F1838;border:1.5px solid #2B2119}
+.hz{position:absolute;right:54px;bottom:34px;z-index:8;width:min(600px,calc(100% - 340px));background:rgba(251,245,228,.98);border:2px solid #2B2119;outline:1px solid #2B2119;outline-offset:-6px;padding:10px 14px 8px;color:#2B2119;box-shadow:0 3px 14px rgba(60,40,10,.25);font:400 13px/1.4 var(--mono)}
+.hz[hidden]{display:none}
+.hz h3{margin:0 26px 2px 0;font:400 22px/1.1 var(--hand);color:#A3261B}
+.hz .x{position:absolute;right:8px;top:6px;border:0;background:none;font:400 20px/1 var(--mono);color:#6E604E;cursor:pointer;min-width:30px;min-height:30px}
+.hz p{margin:0 0 4px}
+.hz svg{width:100%;height:auto;display:block}
+.hz svg .ax{font:400 10px var(--mono);fill:#6E604E}
+.hz svg .lg{font:400 10px var(--mono)}
+.hz .nt{color:#6E604E;font-size:11.5px}
+.hz a{color:#A3261B}
+@media (max-width:800px){
+  .pane{height:78svh;min-height:520px}
+  .hz{left:6px;right:6px;bottom:6px;width:auto;padding:8px 10px 6px;max-height:58%;overflow:auto}
+  .hz h3{font-size:19px}
+  .keys{display:none}
+  .chip .lg{display:none}
+  .chip{padding:8px 8px;font-size:11.5px}
+  .chips{gap:4px}
+  .ov-top{left:8px;right:54px;max-width:none;align-items:flex-start}
+  .lp{top:100px;left:8px;right:8px;min-width:0;max-height:calc(100% - 140px)}
+  .cartouche{top:100px}
+}
+.places{columns:2 260px;column-gap:28px;font:400 14px/1.45 var(--mono);padding-left:18px;margin:10px 0 18px}
+.places li{break-inside:avoid;margin:0 0 6px}
+.places a{cursor:pointer}
+
+.tl{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;z-index:6;width:min(620px,calc(100% - 130px));background:rgba(251,245,228,.96);border:1px solid #9C8656;border-radius:4px;padding:7px 12px 6px;font:400 12.5px/1.3 var(--mono);color:#2B2119;box-shadow:0 2px 10px rgba(60,40,10,.2);display:flex;align-items:center;gap:10px}
+.tl input[type=range]{flex:1;accent-color:#A3261B;min-width:0;height:28px}
+.tl button{font:500 12px/1 var(--mono);background:#2B2119;color:#F6EED8;border:0;border-radius:3px;padding:7px 9px;cursor:pointer;min-height:30px;min-width:34px}
+.tl .yr{font:400 21px/1 var(--hand);color:#A3261B;min-width:118px;text-align:center}
+.tl .sm{font-size:11px;color:#6E604E;white-space:nowrap}
+.cities{position:absolute;left:276px;right:60px;bottom:86px;z-index:6;display:flex;justify-content:safe center;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px}
+.cities::-webkit-scrollbar{display:none}
+.cities button{flex:0 0 auto;width:92px;padding:0 0 4px;border:1px solid #9C8656;border-radius:4px;background:rgba(251,245,228,.97);cursor:pointer;font:500 11px/1.15 var(--mono);color:#2B2119;box-shadow:0 1px 4px rgba(60,40,10,.2);overflow:hidden}
+.cities button img{display:block;width:100%;height:56px;object-fit:cover;background:#1F1838;margin-bottom:3px;image-rendering:auto}
+.cities button[aria-pressed="true"]{border:2px solid #A3261B;background:#fff;box-shadow:0 2px 8px rgba(163,38,27,.35)}
+@media (max-width:800px){.cities{bottom:64px;left:8px;right:8px;justify-content:flex-start}.cities button{width:74px}.cities button img{height:42px}}
+.city{font:500 12px/1 var(--mono);background:rgba(251,245,228,.96);color:#2B2119;border:1px solid #9C8656;border-radius:999px;padding:7px 10px;min-height:34px;cursor:pointer}
+.key .bar{height:10px;border:1px solid #2B2119;margin:4px 0 2px;background:linear-gradient(90deg,#1F1838,#3B2F63,#5B4A8B,#7E6CA8,#A99BC0,#D9C9A3,#EBCB7A,#F0B23A,#E39A2C)}
+.key .ends{display:flex;justify-content:space-between;font-size:10.5px;color:#6E604E}
+.key .sw{display:inline-block;width:14px;height:11px;border:1px solid rgba(43,33,25,.5);vertical-align:-1px;margin-right:5px}
+.keys{bottom:84px}
+@media (max-width:800px){.tl{width:calc(100% - 16px);bottom:8px;padding:6px 8px;gap:6px}.tl .yr{font-size:17px;min-width:86px}.tl .sm{display:none}.maplibregl-ctrl-bottom-right{bottom:70px}}
+
+.pane{background:#F2F0EA}
+.pane::after{box-shadow:none}
+.lp{top:104px}
+.keys{bottom:84px}
+.key .bar{background:linear-gradient(90deg,#2D1E6B,#5B2A86,#8E3A88,#BF4F6E,#DE7445,#E9A33A,#D9C23A)}
+.key .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(43,33,25,.35);flex:none;display:inline-block}
+.tl .cnt{font-size:11px;color:#6E604E;white-space:nowrap}
+@media (max-width:600px){.tb-name{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15px!important}.tb-links{flex:none}}
+@media (max-width:800px){.keys{display:block;left:8px;bottom:64px;max-width:46%;font-size:9.5px;padding:4px 6px}.key b{font-size:13px}.tl .cnt{display:none}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">Waterloo Road and the clock in the streets</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24086515">Paper</a><a class="x" href="https://github.com/Tristan-Hotham/battle-streets">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of UK streets named after battles, coloured by the date of the battle">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true" title="Show the title">The clock in the streets <span aria-hidden="true">▾</span></button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>Waterloo Road and the <span class="a">clock in the streets</span></h1>
+        <p class="dek">Every UK street named after a battle, 3,352 of them, coloured by the battle's date. Slide through time, zoom into a town to see the rings, or tap a street.</p>
+        <div class="byline">Dr Tristan Hotham · Independent researcher · 2026</div>
+      </div>
+    </div>
+    <div class="ov ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a town, battle or street" aria-label="Find a town, battle or street" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips"><button class="chip" data-t="Bristol" aria-pressed="false">Bristol</button><button class="chip" data-t="Glasgow" aria-pressed="false">Glasgow</button><button class="chip" data-t="Kingston upon Hull" aria-pressed="false">Hull</button><button class="chip" data-t="Cheltenham" aria-pressed="false">Cheltenham</button><button class="chip" data-t="Leeds" aria-pressed="false">Leeds</button><button class="chip" data-t="London" aria-pressed="false">London</button><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Layers</h4>
+      <h5>Streets</h5>
+      <label><input type="checkbox" id="ckClock" checked> Battles from 1793 on (coloured by date)</label>
+      <label><input type="checkbox" id="ckOld"> Older battles (Blenheim, Naseby...)</label>
+      <label><input type="checkbox" id="ckAmb"> Ambiguous names (Nile, Quebec, Kimberley...)</label>
+      <label><input type="checkbox" id="ckLab" checked> Street names when zoomed in</label>
+      <h5>Towns</h5>
+      <label><input type="checkbox" id="ckRing" checked> Rings: median distance of each war's streets</label>
+    </div>
+    <div class="keys" id="keys"><div class="key"><b>Date of the battle</b><div class="bar"></div><div class="ends"><span>1793</span><span>1855</span><span>1900</span><span>1945</span></div>
+      <div class="row" style="margin-top:5px"><span class="dot" style="background:#BF4F6E;border-color:#2B2119"></span>&nbsp;black rim: near a place of the same name</div>
+      <div class="row"><span class="dot" style="background:#A8A29E"></span>&nbsp;older battle &nbsp;<span class="dot" style="background:#D6D3D1"></span>&nbsp;ambiguous</div>
+      <div class="row nt" style="color:#6E604E">Covers the whole UK. Rings from zoom 7.</div></div></div>
+    <div class="tl" id="tl" role="group" aria-label="Date of the battle">
+      <button id="play" aria-label="Play through the years">▶</button>
+      <span class="yr" id="yr">all dates</span>
+      <input type="range" id="yrs" min="1793" max="1945" step="1" value="1945" aria-label="Battles up to this year">
+      <span class="cnt" id="cnt"></span>
+    </div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+<p class="lede" style="margin-top:6px">In 1854 British and French troops beat the Russians at the river Alma, and within a few years there were Alma Roads, Alma Streets and Alma Terraces in towns all over Britain. Victorian builders named new streets after the latest victory. If they did that every time, the battle names should be a clock buried in the street plan: Trafalgar and Waterloo near the old centre, Alma and Inkerman a ring further out, Ladysmith and Mafeking further still. Is it there?</p>
+<p>I took every street in OpenStreetMap in the UK named after a battle, joined the pieces of each street, and dated each name by its battle. I set aside 1,008 streets named after battles before 1793 (Blenheim, Naseby, Culloden), which were named long after the event, and 654 with names that are usually something else: the Nile, Quebec, Gibraltar, Kimberley, Delhi. That leaves 1,690 streets named after 54 battles from 1793 to 1944.</p>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026 · Data: OpenStreetMap contributors (ODbL), Wikidata (CC0), ONS boundaries (OGL) · Base map: OpenFreeMap Positron</div>
+<div class="stats">
+<div class="stat"><b>367</b><span>streets named Waterloo, the most of any battle from 1793 on</span></div>
+<div class="stat"><b>425</b><span>named after the four Crimean battles of 1854 and 1855, more than both world wars (315)</span></div>
+<div class="stat"><b>53 of 75</b><span>towns where later battles lie farther from the centre (19 run the other way)</span></div>
+<div class="stat"><b>1.5 to 2.4 km</b><span>typical distance from the centre: French wars against the Boer War</span></div>
+</div>
+
+<h2><span class="n">01 · Bursts</span>Every war leaves a layer of names</h2>
+<p>The names come in bursts. Waterloo (367 streets) and Trafalgar (241) lead, then a gap of almost forty years: the battles from 1816 to 1853, Navarino, Algiers and the Sikh wars among them, gave only 18 streets. Then the Crimea: 340 streets named after the Alma, 57 after Inkerman, 425 in all, in a war of two years. The Indian Rebellion gave Lucknow and Cawnpore, the Boer War Ladysmith (73), Mafeking (43) and Colenso. The two world wars together gave 315: Jutland, Mons, the Marne, Arnhem, Alamein.</p>
+<div class="figure"><img src="img/bursts.jpg" alt="Bar chart of streets named after each battle by the date of the battle: tall bars for Trafalgar and Waterloo, an empty gap, a tall bar for the Alma in 1854, smaller clusters for the Boer War, the First World War and the Second World War" loading="lazy"><p class="src">Streets named after each battle from 1793 on, by the date of the battle.</p></div>
+<p>The world wars did not stop the habit, but they changed it. Only 13% of the streets named after battles from 1854 to 1902 end in Close, Drive, Way, Court or Gardens, the words of twentieth-century estates. For the world-war battles it is 39%: many of those names were given decades later as a theme for a new estate, not in the year of the battle.</p>
+<div class="figure"><img src="img/style.jpg" alt="Bar chart: the share of battle streets ending in Street, Road or Terrace against Close, Drive or Way, by war; the world wars have far more Closes and Drives" loading="lazy"><p class="src">The last word of the name, by war.</p></div>
+
+<h2><span class="n">02 · The clock</span>Later battles, farther out</h2>
+<p>For the test I kept streets with an old-fashioned street word (Street, Road, Terrace, Place, Row, Grove and the like), named after a battle from 1793 on, not near a place of the same name, and within 10 km of a town of 20,000 people or more. In each town with at least four such streets I asked whether the later battles lie farther from the centre, using a rank correlation. In 53 of 75 towns they do, in 19 they run the other way and in 3 it is level. The average correlation is 0.25; if the dates are shuffled at random within each town it is close to zero, and none of 4,000 such shuffles came as high. Streets of one war often sit together, named in one go, which flatters a test that counts every street: counting each cluster of same-war streets within 500 m once, the average falls to 0.16 across 51 towns, and 27 of 4,000 shuffles come as high. Weaker, but still there.</p>
+<div class="figure"><img src="img/clock.jpg" alt="Chart of where each war's streets sit in their towns, from the centre to the edge: the Napoleonic streets near the middle, the Crimean a little further out, the Boer War and First World War furthest; and a histogram of towns' correlations, most of them positive" loading="lazy"><p class="src">Left: each war's streets ranked by distance within their own town. Right: the correlation of date and distance in each town.</p></div>
+<p>Ranked within their own towns, the streets of the French wars sit just past the middle (0.54 on a scale from the centre at 0 to the edge at 1), the Crimean streets a little further out (0.58), and the Boer War streets furthest (0.68). In plain distance, the typical Napoleonic battle street is 1.5 km from its town's centre, the Crimean 2.0 km and the Boer War 2.4 km.</p>
+
+<h2><span class="n">03 · How good a clock?</span>Slow, and it runs fast</h2>
+<p>It is a real signal but a coarse one. Over half a century or more it shows: in 30 of the 40 towns with streets from both, the Napoleonic names sit closer in than the Boer War ones. But between neighbouring wars it is close to a coin toss: the Napoleonic streets are nearer the centre than the Crimean ones in only 47 of 92 towns. One reason is that Waterloo and Trafalgar never went out of fashion: 33% of Trafalgar streets end in Close, Way, Drive or Court, names of the last century. Another is that towns did not grow in neat rings. They grew along roads, around a railway station or an iron works, and some new suburbs went up close to the old centre.</p>
+<div class="figure"><img src="img/towns.jpg" alt="Six small maps of towns with battle streets around the centre and rings at each war's median distance: in Bristol, Glasgow and Hull the rings widen with time; in Preston they do not" loading="lazy"><p class="src">Six town clocks, with rings at the median distance of each war's streets. Bristol, Glasgow, Hull and Cheltenham run broadly in order; Preston runs backwards.</p></div>
+<p>Some towns keep good time. In <a href="#" data-t="Bristol">Bristol</a> the typical Napoleonic street is 1.4 km from the centre, the Crimean 4.5 km, the Boer War 3.5 km and the First World War's Jutland Road 8.9 km. <a href="#" data-t="Glasgow">Glasgow</a> (a correlation of 0.75) and <a href="#" data-t="Kingston upon Hull">Hull</a> (0.84) keep good time too. London barely does (a correlation of 0.12): it swallowed dozens of older towns, each with its own centre. <a href="#" data-t="Preston">Preston</a> and Lincoln run backwards.</p>
+
+<h2><span class="n">04 · Where</span>Alma country</h2>
+<p>Greater London has the most battle streets (126), then Greater Manchester (91) and West Yorkshire (82), and the Alma is the commonest battle on the signs in 18 of 46 English counties, more than any other. Hampshire and Devon, with their naval towns, prefer Trafalgar. The map shows them all: slide the date to watch the layers arrive.</p>
+<div class="figure"><img src="img/map.jpg" alt="Map of the UK with battle streets as dots coloured from dark purple for the French wars through pink for the Crimea to orange and yellow for the Boer War and world wars, thickest in the industrial towns of the north and Midlands and in London" loading="lazy"><p class="src">Every battle street from 1793 on, coloured by the date of the battle; grey: older battles and ambiguous names.</p></div>
+
+<h2><span class="n">05 · How I did this</span>Names, dates and false friends</h2>
+<p><b>Streets.</b> 6,885 OpenStreetMap highways whose names contain one of 111 battle names, queried with QLever, matched as whole words. Pieces of one street with the same name were joined when they chain within 600 m (1.5 km for through roads), giving 3,352 streets. I read the full list of names for every battle and removed by hand 9 that are not streets or not battles (pothole markers, moorings, railway sidings, Alma Martin Way, Arras Hill in Yorkshire, an old place name).</p>
+<p><b>Dates.</b> Each battle has the date of the battle itself, or for a siege its relief (Ladysmith, Mafeking) or fall (Sebastopol). The table is in the data. Battles before 1793 are set aside: a street named Naseby or Agincourt was named centuries later. 654 streets with names that are usually a place, a person or a colour are set aside too: Aboukir, Alexandria, Cabul, Copenhagen, Crimea, Delhi, Dunkirk, Falklands, Gibraltar, Kandahar, Kimberley, Magenta, Minorca, Nile, Portobello, Quebec, Scinde, St Vincent and Vigo. 32 more are within 3 km of a place of the same name (Waterloo in London and on Merseyside, Inkerman in County Durham, Camperdown in Dundee) and are probably named after the place.</p>
+<p><b>What this cannot say.</b> The name dates the battle, not the building of the street. Most streets were probably named within a few years of their battle, but some were named much later. Alma is also a woman's name: 50 of the 340 Alma streets are Closes, Avenues and the like more than 1 km from any Alma Street or Road, and some of those may be named after a person; even without them the Crimea (375) outnumbers both world wars. The town centre is Wikidata's point for the town, and each street belongs to the nearest town of 20,000 people within 10 km, so streets in a conurbation go to whichever centre is nearest. The test is a pattern across towns, not a dating method for any one street.</p>
+<details><summary>Sources and licences</summary>
+<ul class="plain">
+<li>Streets: © OpenStreetMap contributors (ODbL), queried with QLever (University of Freiburg). The street tables here are derived from OpenStreetMap and released under the ODbL.</li>
+<li>Towns: Wikidata (CC0). Counties: ONS boundaries (Open Government Licence v3.0).</li>
+<li>Battle dates: standard reference dates, listed in data/battles.csv.</li>
+<li>Base map: OpenFreeMap Positron style, from OpenStreetMap vector tiles (ODbL). MapLibre GL JS 4.7.1 (BSD 3-Clause).</li>
+<li>Text and figures CC BY 4.0; code MIT.</li>
+</ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24086515">Read the paper</a><a href="https://github.com/Tristan-Hotham/battle-streets">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/battle-streets/">Blog post</a></div>
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) Waterloo Road and the clock in the streets: battle street names and the growth of British towns. Zenodo. <a href="https://doi.org/10.5281/zenodo.24086515">10.5281/zenodo.24086515</a></p>
+<p>Code: <a href="https://github.com/Tristan-Hotham/battle-streets">github.com/Tristan-Hotham/battle-streets</a> (MIT). Text and figures CC BY 4.0; derived data ODbL (OpenStreetMap).</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/page.js?v=20261109"></script>
+<!-- map-fullscreen v1 -->
+<style id="mfs-style">
+.mfs-btn{position:absolute;top:10px;right:10px;z-index:1001;width:34px;height:34px;border:2px solid rgba(0,0,0,.25);border-radius:4px;background:#fff;color:#222;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.mfs-btn:hover{background:#f2f2f2}
+.mfs-btn svg{width:18px;height:18px}
+.mfs-host.mfs-btn-left .mfs-btn{right:auto;left:54px}
+.mfs-fake{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;z-index:100000!important;border-radius:0!important}
+html.mfs-lock,html.mfs-lock body{overflow:hidden!important}
+:fullscreen.mfs-host{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;border-radius:0!important}
+</style>
+<script id="mfs-script">
+(function(){
+  var ICON_OPEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var ICON_CLOSE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  function poke(){setTimeout(function(){window.dispatchEvent(new Event('resize'));},60);setTimeout(function(){window.dispatchEvent(new Event('resize'));},400);}
+  function realFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function add(el){
+    if(el.__mfs)return; el.__mfs=1;
+    var cs=getComputedStyle(el); if(cs.position==='static')el.style.position='relative';
+    el.classList.add('mfs-host');
+    // avoid clashing with a top-right Leaflet control (e.g. "Map layers")
+    var tr=el.querySelector('.leaflet-top.leaflet-right');
+    if(tr&&tr.children.length){ el.classList.add('mfs-btn-left'); }
+    var b=document.createElement('button'); b.type='button'; b.className='mfs-btn';
+    b.title='Full screen map'; b.setAttribute('aria-label','Full screen map'); b.innerHTML=ICON_OPEN;
+    ['click','dblclick','mousedown','touchstart','wheel'].forEach(function(t){b.addEventListener(t,function(e){e.stopPropagation();},{passive:t!=='click'});});
+    function setIcon(on){b.innerHTML=on?ICON_CLOSE:ICON_OPEN;b.title=on?'Exit full screen':'Full screen map';b.setAttribute('aria-label',b.title);}
+    function exitFake(){el.classList.remove('mfs-fake');document.documentElement.classList.remove('mfs-lock');setIcon(false);poke();}
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(el.classList.contains('mfs-fake')){exitFake();return;}
+      if(realFS()){(document.exitFullscreen||document.webkitExitFullscreen).call(document);return;}
+      var req=el.requestFullscreen||el.webkitRequestFullscreen;
+      if(req){ try{ var p=req.call(el); if(p&&p.catch)p.catch(function(){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();}); }catch(err){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();} }
+      else { el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke(); }
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.classList.contains('mfs-fake'))exitFake();});
+    ['fullscreenchange','webkitfullscreenchange'].forEach(function(t){document.addEventListener(t,function(){setIcon(realFS()===el);poke();});});
+    el.appendChild(b);
+  }
+  function scan(){
+    var els=document.querySelectorAll('[data-fullscreen-map], .leaflet-container, .maplibregl-map, .mapboxgl-map');
+    els.forEach(function(el){
+      if(el.closest('.mfs-host')&&!el.classList.contains('mfs-host'))return;
+      var r=el.getBoundingClientRect(); if(r.width<200||r.height<150)return;
+      add(el);
+    });
+  }
+  function start(){scan(); var n=0; var t=setInterval(function(){scan(); if(++n>20)clearInterval(t);},500);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
+<!-- /map-fullscreen -->
+
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>
